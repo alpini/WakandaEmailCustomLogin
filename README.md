@@ -20,7 +20,8 @@ You have to set the loginListener method on the bootstrap file
 
 
 2. Add the module login to export the login method
-```
+
+```javascript
 //Wakanda Login Listener
 var login = function (emailAddress, password) {
 
@@ -47,27 +48,32 @@ var login = function (emailAddress, password) {
 	}
 };
 
-module.exports.login = login;```
+module.exports.login = login;
+```
 
 3. Add User events for the password (get and set) 
 
-```model.User.password.onGet = function() {
+```javascript
+model.User.password.onGet = function() {
 	return "*****";
 };
 model.User.password.onSet = function(value) {
 	this.HA1Key = directory.computeHA1(this.ID, value);
-};```
+};
+```
 
 4. Add user method to validate the password
-```
+```javascript
 model.User.entityMethods.validatePassword = function(password) {
 	var ha1 = directory.computeHA1(this.ID, password);
 	return (ha1 === this.HA1Key); //true if validated, false otherwise.
 
-};```
+};
+```
 
 5. Add user event to validate the email address (it will throw an error if the email is not valid)
-```model.User.email.events.validate = function(event) {
+```javascript
+model.User.email.events.validate = function(event) {
 	var err, emailRegexStr, isValid;
 	//Check the email to see if it's valid.
 	if (this.email !== null) {
@@ -81,11 +87,13 @@ model.User.entityMethods.validatePassword = function(password) {
         return {error: 0}; //Same as no error
     } 
 
-};```
+};
+```
 
 
 Now just use the login on the client side as usual 
-```	this.wakanda.directory.login(userEmail, userPassword)
+```javascript
+this.wakanda.directory.login(userEmail, userPassword)
 	    .then((result) => {	... }) 
-      
+```      
 
