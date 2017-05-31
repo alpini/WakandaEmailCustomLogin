@@ -1,0 +1,41 @@
+﻿{
+	"tabbedWindows": [],
+	"solutionExplorer": {
+		"left": {
+			"tabs": [],
+			"current": -1
+		},
+		"right": {
+			"tabs": [],
+			"current": -1
+		},
+		"bottom": {
+			"tabs": [],
+			"current": -1
+		},
+		"side": {
+			"tabs": [],
+			"current": -1
+		},
+		"mainSplitter": {
+			"leftPanelWidth": 282,
+			"rightPanelWidth": 1276,
+			"leftPanelCollapsed": 0,
+			"rightPanelCollapsed": 0
+		},
+		"hSplitter": {
+			"leftPanelWidth": 800,
+			"rightPanelWidth": 400,
+			"leftPanelCollapsed": 0,
+			"rightPanelCollapsed": 1
+		},
+		"vSplitter": {
+			"topPanelHeight": 498,
+			"bottomPanelHeight": 200,
+			"topPanelCollapsed": 0,
+			"bottomPanelCollapsed": 0
+		},
+		"home": "side",
+		"startPage": "left"
+	}
+}

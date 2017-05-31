@@ -1,0 +1,97 @@
+{
+	"toJSON": true,
+	"extraProperties": {
+		"version": "2",
+		"classes": {
+			"User": {
+				"panelColor": "#D7E3BC",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 25,
+						"Y": 20
+					}
+				}
+			}
+		},
+		"model": {
+			"scriptMode": "manual",
+			"workspaceLeft": 0,
+			"workspaceTop": 0,
+			"lastScriptLocation": {
+				"User": {
+					"method": "User/User-methods.js",
+					"computed": "User/User-events.js",
+					"events": "User/User-events.js"
+				}
+			}
+		}
+	},
+	"dataClasses": [
+		{
+			"name": "User",
+			"className": "User",
+			"collectionName": "UserCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "email",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "password",
+					"kind": "calculated",
+					"scope": "public",
+					"type": "string",
+					"scriptKind": "javascript",
+					"onGet": [
+						{
+							"from": "$mainModel.User.password.onGet",
+							"userDefined": true
+						}
+					],
+					"onSet": [
+						{
+							"from": "$mainModel.User.password.onSet",
+							"userDefined": true
+						}
+					]
+				},
+				{
+					"name": "HA1Key",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				}
+			],
+			"events": [
+				{
+					"kind": "save",
+					"from": "$mainModel.User.events.save",
+					"userDefined": true
+				}
+			],
+			"methods": [
+				{
+					"name": "validatePassword",
+					"applyTo": "entity",
+					"scope": "publicOnServer",
+					"from": "$mainModel.User.entityMethods.validatePassword",
+					"userDefined": true
+				}
+			]
+		}
+	]
+}
