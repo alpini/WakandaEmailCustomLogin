@@ -1,7 +1,9 @@
 # WakandaEmailCustomLogin
 An example of Wakanda (2.0+) for a backend with a custom login based on email
 
-The simple model 
+Please contact me through twitter @jsapplied if you need any help with this code. 
+
+Model 
 
 ![alt text](https://github.com/rmello4d/WakandaEmailCustomLogin/blob/master/model.png)
 
